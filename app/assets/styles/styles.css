@@ -1,0 +1,18 @@
+/*  */
+/*  */
+$mainBlue: #222572;
+/*  */
+body {
+  color: $mainBlue;
+  font-size: 62.5%;
+  margin: 1rem;
+  columns: 300px 2;
+}
+
+.box {
+  a {
+    display: inline;
+    padding: 10px;
+    color: blue;
+  }
+}

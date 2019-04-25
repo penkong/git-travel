@@ -1,0 +1,16 @@
+/*  */
+/*  */
+/*  */
+body {
+  color: #222572;
+  font-size: 62.5%;
+  margin: 1rem;
+  -moz-columns: 300px 2;
+       columns: 300px 2;
+}
+
+.box a {
+  display: inline;
+  padding: 10px;
+  color: blue;
+}
