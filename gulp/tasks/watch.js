@@ -2,7 +2,17 @@ var gulp = require('gulp'),
   watch = require('gulp-watch'),
   browserSync = require('browser-sync').create();
 // ========================
+// =============================
 
+//inject css from posted css file to index that watched by browserSync.
+//styles task is dependency inside arry = new Arg (run before other and first complete it)
+gulp.task('cssInject', ['styles'], function () {
+  return gulp.src('./app/temp/styles/styles.css')
+    //stream method make everything we pipe in available in browser
+    .pipe(browserSync.stream());
+});
+
+//=========================================
 
 gulp.task('watch', function () {
   // automate serve us watch app folder from distance of gulp.js
@@ -24,15 +34,6 @@ gulp.task('watch', function () {
   })
 });
 
-// =============================
-
-//inject css from posted css file to index that watched by browserSync.
-//styles task is dependency inside arry = new Arg (run before other and first complete it)
-gulp.task('cssInject', ['styles'], function () {
-  return gulp.src('./app/temp/styles/styles.css')
-    //stream method make everything we pipe in available in browser
-    .pipe(browserSync.stream());
-});
 
 
 
