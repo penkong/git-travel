@@ -46,7 +46,11 @@
 
 	'use strict';
 
-	var _MobileMenu = __webpack_require__(1);
+	var _jquery = __webpack_require__(1);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	var _MobileMenu = __webpack_require__(2);
 
 	var _MobileMenu2 = _interopRequireDefault(_MobileMenu);
 
@@ -54,67 +58,19 @@
 
 	var _RevealOnScroll2 = _interopRequireDefault(_RevealOnScroll);
 
-	var _jquery = __webpack_require__(2);
+	var _StickyHeader = __webpack_require__(5);
 
-	var _jquery2 = _interopRequireDefault(_jquery);
+	var _StickyHeader2 = _interopRequireDefault(_StickyHeader);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var mobileMenu = new _MobileMenu2.default();
 	new _RevealOnScroll2.default((0, _jquery2.default)(".feature-item"), "85%");
 	new _RevealOnScroll2.default((0, _jquery2.default)(".testimonial"), "65%");
+	var stickyHeader = new _StickyHeader2.default();
 
 /***/ },
 /* 1 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _jquery = __webpack_require__(2);
-
-	var _jquery2 = _interopRequireDefault(_jquery);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	var MobileMenu = function () {
-	  function MobileMenu() {
-	    _classCallCheck(this, MobileMenu);
-
-	    this.menuIcon = (0, _jquery2.default)(".site-header__menu-icon");
-	    this.menuContent = (0, _jquery2.default)(".site-header__menu-content");
-	    this.siteHeader = (0, _jquery2.default)(".site-header");
-	    this.events();
-	  }
-
-	  _createClass(MobileMenu, [{
-	    key: "events",
-	    value: function events() {
-	      this.menuIcon.click(this.toggleTheMenu.bind(this));
-	    }
-	  }, {
-	    key: "toggleTheMenu",
-	    value: function toggleTheMenu() {
-	      this.menuContent.toggleClass("site-header__menu-content--is-visible");
-	      this.siteHeader.toggleClass("site-header--is-expanded");
-	      this.menuIcon.toggleClass("site-header__menu-icon--close-x");
-	    }
-	  }]);
-
-	  return MobileMenu;
-	}();
-
-	exports.default = MobileMenu;
-
-/***/ },
-/* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -9934,6 +9890,55 @@
 
 
 /***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _jquery = __webpack_require__(1);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var MobileMenu = function () {
+	  function MobileMenu() {
+	    _classCallCheck(this, MobileMenu);
+
+	    this.menuIcon = (0, _jquery2.default)(".site-header__menu-icon");
+	    this.menuContent = (0, _jquery2.default)(".site-header__menu-content");
+	    this.siteHeader = (0, _jquery2.default)(".site-header");
+	    this.events();
+	  }
+
+	  _createClass(MobileMenu, [{
+	    key: "events",
+	    value: function events() {
+	      this.menuIcon.click(this.toggleTheMenu.bind(this));
+	    }
+	  }, {
+	    key: "toggleTheMenu",
+	    value: function toggleTheMenu() {
+	      this.menuContent.toggleClass("site-header__menu-content--is-visible");
+	      this.siteHeader.toggleClass("site-header--is-expanded");
+	      this.menuIcon.toggleClass("site-header__menu-icon--close-x");
+	    }
+	  }]);
+
+	  return MobileMenu;
+	}();
+
+	exports.default = MobileMenu;
+
+/***/ },
 /* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -9945,7 +9950,7 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _jquery = __webpack_require__(2);
+	var _jquery = __webpack_require__(1);
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -10745,6 +10750,81 @@
 	  Waypoint.Adapter = NoFrameworkAdapter
 	}())
 	;
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _jquery = __webpack_require__(1);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	var _noframework = __webpack_require__(4);
+
+	var _noframework2 = _interopRequireDefault(_noframework);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var StickyHeader = function () {
+	  function StickyHeader() {
+	    _classCallCheck(this, StickyHeader);
+
+	    this.siteHeader = (0, _jquery2.default)(".site-header");
+	    this.headerTriggerElement = (0, _jquery2.default)(".large-hero__title");
+	    this.createHeaderWayPoint();
+	    //  make link yellow
+	    this.pageSections = (0, _jquery2.default)(".page-section");
+	    // this.headerLinks = $(".primary-nav a");
+	    this.createPageSectionWaypoint();
+	  }
+
+	  _createClass(StickyHeader, [{
+	    key: 'createHeaderWayPoint',
+	    value: function createHeaderWayPoint() {
+	      var that = this;
+	      new Waypoint({
+	        element: this.headerTriggerElement[0],
+	        handler: function handler(direction) {
+	          if (direction == "down") {
+	            that.siteHeader.addClass("site-header--dark");
+	          } else {
+	            that.siteHeader.removeClass("site-header--dark");
+	          }
+	        }
+	      });
+	    }
+	  }, {
+	    key: 'createPageSectionWaypoint',
+	    value: function createPageSectionWaypoint() {
+	      // let that = this;
+	      this.pageSections.each(function () {
+	        var currentPageSection = this;
+	        new Waypoint({
+	          element: currentPageSection,
+	          handler: function handler() {
+	            var matchingHeaderLink = currentPageSection.getAttribute("data-matching-link");
+	            // this.headerLinks.removeClass("is-current-link");
+	            (0, _jquery2.default)("matchingHeaderLink").addClass("is-current-link");
+	          }
+	        });
+	      });
+	    }
+	  }]);
+
+	  return StickyHeader;
+	}();
+
+	exports.default = StickyHeader;
 
 /***/ }
 /******/ ]);
