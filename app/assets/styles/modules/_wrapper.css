@@ -6,6 +6,9 @@
   max-width: 1236px;
   margin: 0 auto;
 
+  &--narrow {
+    max-width: 476px;
+  }
   &--medium {
     max-width: 976px;
   }
